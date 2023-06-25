@@ -1,4 +1,7 @@
 using ChainingAssertion;
+using Moq;
+using NDDD.Domain.Entities;
+using NDDD.Domain.Repositories;
 using NDDD.WinForm.ViewModels;
 
 namespace NDDDTests.Test.ViewModelTests
@@ -9,7 +12,13 @@ namespace NDDDTests.Test.ViewModelTests
         [TestMethod]
         public void シナリオ()
         {
-            var vm = new LatestViewModel();
+            var entity = new MeasureEntity(
+                1,
+                Convert.ToDateTime("2012/12/12 12:34:56"),
+                12.341f);
+            var measureMock = new Mock<IMeasureRepository>();
+            measureMock.Setup(x => x.GetLatest()).Returns(entity);
+            var vm = new LatestViewModel(measureMock.Object);
             //エリアID
             //計測日時
             //計測値

@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NDDD.Domain\NDDD.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
