@@ -78,7 +78,6 @@
             MeasureDateTextBox.ReadOnly = true;
             MeasureDateTextBox.Size = new Size(100, 23);
             MeasureDateTextBox.TabIndex = 5;
-            MeasureDateTextBox.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -97,6 +96,7 @@
             SearchButton.TabIndex = 6;
             SearchButton.Text = "Search";
             SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
             // LatestView
             // 
