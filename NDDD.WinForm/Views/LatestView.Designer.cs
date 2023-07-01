@@ -35,12 +35,15 @@
             MeasureDateTextBox = new TextBox();
             label3 = new Label();
             SearchButton = new Button();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(63, 29);
+            label1.Location = new Point(36, 29);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 0;
@@ -48,24 +51,24 @@
             // 
             // AreaIdTextBox
             // 
-            AreaIdTextBox.Location = new Point(123, 24);
+            AreaIdTextBox.Location = new Point(96, 24);
             AreaIdTextBox.Name = "AreaIdTextBox";
             AreaIdTextBox.ReadOnly = true;
-            AreaIdTextBox.Size = new Size(100, 23);
+            AreaIdTextBox.Size = new Size(150, 23);
             AreaIdTextBox.TabIndex = 1;
             // 
             // MeasureValueTextBox
             // 
-            MeasureValueTextBox.Location = new Point(122, 96);
+            MeasureValueTextBox.Location = new Point(95, 96);
             MeasureValueTextBox.Name = "MeasureValueTextBox";
             MeasureValueTextBox.ReadOnly = true;
-            MeasureValueTextBox.Size = new Size(100, 23);
+            MeasureValueTextBox.Size = new Size(150, 23);
             MeasureValueTextBox.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(62, 101);
+            label2.Location = new Point(35, 101);
             label2.Name = "label2";
             label2.Size = new Size(43, 15);
             label2.TabIndex = 2;
@@ -73,16 +76,16 @@
             // 
             // MeasureDateTextBox
             // 
-            MeasureDateTextBox.Location = new Point(123, 60);
+            MeasureDateTextBox.Location = new Point(96, 60);
             MeasureDateTextBox.Name = "MeasureDateTextBox";
             MeasureDateTextBox.ReadOnly = true;
-            MeasureDateTextBox.Size = new Size(100, 23);
+            MeasureDateTextBox.Size = new Size(150, 23);
             MeasureDateTextBox.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(63, 65);
+            label3.Location = new Point(36, 65);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 4;
@@ -98,11 +101,28 @@
             SearchButton.UseVisualStyleBackColor = true;
             SearchButton.Click += SearchButton_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 239);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(284, 22);
+            statusStrip1.TabIndex = 7;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.BackColor = Color.Red;
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(76, 17);
+            toolStripStatusLabel1.Text = "Debug Mode";
+            // 
             // LatestView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(284, 261);
+            Controls.Add(statusStrip1);
             Controls.Add(SearchButton);
             Controls.Add(MeasureDateTextBox);
             Controls.Add(label3);
@@ -112,6 +132,8 @@
             Controls.Add(label1);
             Name = "LatestView";
             Text = "LatestView";
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,5 +147,7 @@
         private TextBox MeasureDateTextBox;
         private Label label3;
         private Button SearchButton;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

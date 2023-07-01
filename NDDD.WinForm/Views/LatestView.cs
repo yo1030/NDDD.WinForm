@@ -1,4 +1,5 @@
-﻿using NDDD.Infrastructure.Fake;
+﻿using NDDD.Infrastructure;
+using NDDD.Infrastructure.Fake;
 using NDDD.WinForm.ViewModels;
 
 namespace NDDD.WinForm.Views
@@ -6,10 +7,15 @@ namespace NDDD.WinForm.Views
     public partial class LatestView : Form
     {
         private LatestViewModel _viewModel
-            = new LatestViewModel(new MeasureFake());
+            = new LatestViewModel(Factories.CreateMeasure());
         public LatestView()
         {
             InitializeComponent();
+
+            toolStripStatusLabel1.Visible = false;
+#if DEBUG
+            toolStripStatusLabel1.Visible = true;
+#endif
 
             AreaIdTextBox.DataBindings.Add(
                 "Text",
