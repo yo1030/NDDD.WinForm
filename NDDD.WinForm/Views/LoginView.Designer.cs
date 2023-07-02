@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "LoginView";
+            LoginButton = new Button();
+            PasswordTextBox = new TextBox();
+            label3 = new Label();
+            LoginTextBox = new TextBox();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // LoginButton
+            // 
+            LoginButton.Location = new Point(53, 119);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(270, 28);
+            LoginButton.TabIndex = 13;
+            LoginButton.Text = "ログイン";
+            LoginButton.UseVisualStyleBackColor = true;
+            // 
+            // PasswordTextBox
+            // 
+            PasswordTextBox.Location = new Point(148, 72);
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.PasswordChar = '*';
+            PasswordTextBox.Size = new Size(150, 23);
+            PasswordTextBox.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(88, 77);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 11;
+            label3.Text = "パスワード";
+            // 
+            // LoginTextBox
+            // 
+            LoginTextBox.Location = new Point(148, 36);
+            LoginTextBox.Name = "LoginTextBox";
+            LoginTextBox.Size = new Size(150, 23);
+            LoginTextBox.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(88, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 15);
+            label1.TabIndex = 7;
+            label1.Text = "ログインID";
+            // 
+            // LoginView
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(397, 187);
+            Controls.Add(LoginButton);
+            Controls.Add(PasswordTextBox);
+            Controls.Add(label3);
+            Controls.Add(LoginTextBox);
+            Controls.Add(label1);
+            Name = "LoginView";
+            Text = "LoginView";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button LoginButton;
+        private TextBox PasswordTextBox;
+        private Label label3;
+        private TextBox LoginTextBox;
+        private Label label1;
     }
 }

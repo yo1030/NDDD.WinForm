@@ -35,9 +35,6 @@
             MeasureDateTextBox = new TextBox();
             label3 = new Label();
             SearchButton = new Button();
-            statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
-            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -101,28 +98,11 @@
             SearchButton.UseVisualStyleBackColor = true;
             SearchButton.Click += SearchButton_Click;
             // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 239);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(284, 22);
-            statusStrip1.TabIndex = 7;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            toolStripStatusLabel1.BackColor = Color.Red;
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(76, 17);
-            toolStripStatusLabel1.Text = "Debug Mode";
-            // 
             // LatestView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(284, 261);
-            Controls.Add(statusStrip1);
             Controls.Add(SearchButton);
             Controls.Add(MeasureDateTextBox);
             Controls.Add(label3);
@@ -132,8 +112,6 @@
             Controls.Add(label1);
             Name = "LatestView";
             Text = "LatestView";
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,7 +125,5 @@
         private TextBox MeasureDateTextBox;
         private Label label3;
         private Button SearchButton;
-        private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
