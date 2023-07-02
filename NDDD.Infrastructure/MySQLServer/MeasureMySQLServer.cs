@@ -4,7 +4,7 @@ using System;
 
 namespace NDDD.Infrastructure.MySQLServer
 {
-    public sealed class MeasureMySQLServer : IMeasureRepository
+    internal sealed class MeasureMySQLServer : IMeasureRepository
     {
         public MeasureEntity GetLatest()
         {
