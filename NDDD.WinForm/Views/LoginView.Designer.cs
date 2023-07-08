@@ -43,6 +43,7 @@
             LoginButton.TabIndex = 13;
             LoginButton.Text = "ログイン";
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
             // PasswordTextBox
             // 
@@ -89,6 +90,11 @@
             Controls.Add(label1);
             Name = "LoginView";
             Text = "LoginView";
+            Controls.SetChildIndex(label1, 0);
+            Controls.SetChildIndex(LoginTextBox, 0);
+            Controls.SetChildIndex(label3, 0);
+            Controls.SetChildIndex(PasswordTextBox, 0);
+            Controls.SetChildIndex(LoginButton, 0);
             ResumeLayout(false);
             PerformLayout();
         }

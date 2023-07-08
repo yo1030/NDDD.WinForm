@@ -1,4 +1,6 @@
-﻿namespace NDDD.WinForm.Views
+﻿using NDDD.Domain;
+
+namespace NDDD.WinForm.Views
 {
     public partial class BaseForm : Form
     {
@@ -10,6 +12,7 @@
 #if DEBUG
             toolStripStatusLabel1.Visible = true;
 #endif
+            UserIdLabel.Text = Shared.LoginId;
         }
     }
 }

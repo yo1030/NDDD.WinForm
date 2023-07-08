@@ -37,9 +37,9 @@ namespace NDDD.WinForm.ViewModels
         public void Search()
         {
             var measure = _measureRepository.GetLatest();
-            AreaIdText = measure.AreaId.ToString().PadLeft(4, '0');
-            MeasureDateText = measure.MeasureDate.ToString("yyyy/MM/dd HH:mm:ss");
-            MeasureValueText = Math.Round(measure.MeasureValue, 2) + "℃";
+            AreaIdText = measure.AreaId.DisplaValue;
+            MeasureDateText = measure.MeasureDate.DisplaValue;
+            MeasureValueText = measure.MeasureValue.DisplaValue;
             base.OnPropertyChanged();
         }
     }

@@ -30,12 +30,13 @@
         {
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            UserIdLabel = new ToolStripStatusLabel();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, UserIdLabel });
             statusStrip1.Location = new Point(0, 339);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(427, 22);
@@ -48,6 +49,12 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(76, 17);
             toolStripStatusLabel1.Text = "Debug Mode";
+            // 
+            // UserIdLabel
+            // 
+            UserIdLabel.Name = "UserIdLabel";
+            UserIdLabel.Size = new Size(118, 17);
+            UserIdLabel.Text = "toolStripStatusLabel2";
             // 
             // BaseForm
             // 
@@ -67,5 +74,6 @@
 
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel UserIdLabel;
     }
 }
