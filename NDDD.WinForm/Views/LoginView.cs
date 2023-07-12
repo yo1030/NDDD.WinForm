@@ -4,6 +4,9 @@ namespace NDDD.WinForm.Views
 {
     public partial class LoginView : BaseForm
     {
+        private static log4net.ILog _logger =
+            log4net.LogManager.GetLogger(
+                System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public LoginView()
         {
             InitializeComponent();
@@ -17,6 +20,16 @@ namespace NDDD.WinForm.Views
             {
                 f.ShowDialog();
             }
+        }
+
+        private void LoginView_Load(object sender, EventArgs e)
+        {
+            _logger.Info("open:" + this.Name);
+        }
+
+        private void LoginView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _logger.Info("close:" + this.Name);
         }
     }
 }
