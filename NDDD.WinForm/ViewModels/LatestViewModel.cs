@@ -1,5 +1,7 @@
 ﻿using NDDD.Domain.Entities;
 using NDDD.Domain.Repositories;
+using NDDD.Domain.StaticValues;
+using NDDD.Domain.ValueObjects;
 using NDDD.Infrastructure;
 
 namespace NDDD.WinForm.ViewModels
@@ -36,7 +38,8 @@ namespace NDDD.WinForm.ViewModels
 
         public void Search()
         {
-            var measure = _measureRepository.GetLatest();
+            //var measure = _measureRepository.GetLatest();
+            var measure = Measures.GetLatest(new AreaId(20));
             AreaIdText = measure.AreaId.DisplaValue;
             MeasureDateText = measure.MeasureDate.DisplaValue;
             MeasureValueText = measure.MeasureValue.DisplaValue;

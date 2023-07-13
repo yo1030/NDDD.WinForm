@@ -1,4 +1,7 @@
-﻿namespace NDDD.WinForm.BackgroundWorkers
+﻿using NDDD.Domain.StaticValues;
+using NDDD.Infrastructure;
+
+namespace NDDD.WinForm.BackgroundWorkers
 {
     internal static class LatestTimer
     {
@@ -12,7 +15,7 @@
 
         internal static void Start()
         {
-            _timer.Change(10000, 10000);
+            _timer.Change(0, 10000);
         }
 
         internal static void Stop()
@@ -32,6 +35,7 @@
             try
             {
                 _isWork = true;
+                Measures.Create(Factories.CreateMeasure());
             }
             finally
             {

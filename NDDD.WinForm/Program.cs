@@ -1,3 +1,4 @@
+using NDDD.WinForm.BackgroundWorkers;
 using NDDD.WinForm.Views;
 
 namespace NDDD.WinForm
@@ -23,6 +24,7 @@ namespace NDDD.WinForm
             _logger.Error("ErrorÇÃÉçÉO");
             _logger.Fatal("fatalÇÃÉçÉO");
 
+            LatestTimer.Start();
             Application.Run(new LoginView());
         }
     }
