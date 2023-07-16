@@ -3,8 +3,14 @@ using NDDD.Domain.Exceptions;
 
 namespace NDDD.WinForm.Views
 {
+    /// <summary>
+    /// Viewの基底クラス
+    /// </summary>
     public partial class BaseForm : Form
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public BaseForm()
         {
             InitializeComponent();
@@ -16,6 +22,17 @@ namespace NDDD.WinForm.Views
             UserIdLabel.Text = Shared.LoginId;
         }
 
+        /// <summary>
+        /// ログ
+        /// </summary>
+        private static log4net.ILog _logger =
+            log4net.LogManager.GetLogger(
+                System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        /// <summary>
+        /// 例外共通処理
+        /// </summary>
+        /// <param name="ex"></param>
         protected void ExceptionProc(Exception ex)
         {
             MessageBoxIcon icon = MessageBoxIcon.Error;
@@ -38,6 +55,16 @@ namespace NDDD.WinForm.Views
                 }
             }
             MessageBox.Show(ex.Message, caption, MessageBoxButtons.OK, icon);
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            _logger.Info("open:" + this.Name);
+        }
+
+        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _logger.Info("close:" + this.Name);
         }
     }
 }

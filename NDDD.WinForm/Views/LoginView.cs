@@ -2,16 +2,24 @@
 
 namespace NDDD.WinForm.Views
 {
+    /// <summary>
+    /// ログインView
+    /// </summary>
     public partial class LoginView : BaseForm
     {
-        private static log4net.ILog _logger =
-            log4net.LogManager.GetLogger(
-                System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public LoginView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// ログインボタン押下
+        /// </summary>
+        /// <param name="sender">コントロール</param>
+        /// <param name="e">イベント引数</param>
         private void LoginButton_Click(object sender, EventArgs e)
         {
             Shared.LoginId = LoginTextBox.Text;
@@ -20,16 +28,6 @@ namespace NDDD.WinForm.Views
             {
                 f.ShowDialog();
             }
-        }
-
-        private void LoginView_Load(object sender, EventArgs e)
-        {
-            _logger.Info("open:" + this.Name);
-        }
-
-        private void LoginView_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _logger.Info("close:" + this.Name);
         }
     }
 }

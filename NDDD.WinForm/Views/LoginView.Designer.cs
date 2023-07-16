@@ -90,8 +90,6 @@
             Controls.Add(label1);
             Name = "LoginView";
             Text = "LoginView";
-            FormClosed += LoginView_FormClosed;
-            Load += LoginView_Load;
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(LoginTextBox, 0);
             Controls.SetChildIndex(label3, 0);

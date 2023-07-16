@@ -1,10 +1,16 @@
-using NDDD.WinForm.BackgroundWorkers;
+ï»¿using NDDD.WinForm.BackgroundWorkers;
 using NDDD.WinForm.Views;
 
 namespace NDDD.WinForm
 {
+    /// <summary>
+    /// Program
+    /// </summary>
     internal static class Program
     {
+        /// <summary>
+        /// ãƒ­ã‚°
+        /// </summary>
         private static log4net.ILog _logger =
             log4net.LogManager.GetLogger(
                 System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -18,11 +24,11 @@ namespace NDDD.WinForm
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            _logger.Debug("ƒfƒoƒbƒO‚ÌƒƒO");
-            _logger.Info("information‚ÌƒƒO");
-            _logger.Warn("warning‚ÌƒƒO");
-            _logger.Error("Error‚ÌƒƒO");
-            _logger.Fatal("fatal‚ÌƒƒO");
+            _logger.Debug("ãƒ‡ãƒãƒƒã‚°ã®ãƒ­ã‚°");
+            _logger.Info("informationã®ãƒ­ã‚°");
+            _logger.Warn("warningã®ãƒ­ã‚°");
+            _logger.Error("Errorã®ãƒ­ã‚°");
+            _logger.Fatal("fatalã®ãƒ­ã‚°");
 
             LatestTimer.Start();
             Application.Run(new LoginView());

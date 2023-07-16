@@ -64,6 +64,8 @@
             Controls.Add(statusStrip1);
             Name = "BaseForm";
             Text = "BaseForm";
+            FormClosed += BaseForm_FormClosed;
+            Load += BaseForm_Load;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             ResumeLayout(false);
