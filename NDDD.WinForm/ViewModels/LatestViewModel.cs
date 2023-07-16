@@ -3,6 +3,7 @@ using NDDD.Domain.Repositories;
 using NDDD.Domain.StaticValues;
 using NDDD.Domain.ValueObjects;
 using NDDD.Infrastructure;
+using System.Transactions;
 
 namespace NDDD.WinForm.ViewModels
 {
@@ -44,6 +45,18 @@ namespace NDDD.WinForm.ViewModels
             MeasureDateText = measure.MeasureDate.DisplaValue;
             MeasureValueText = measure.MeasureValue.DisplaValue;
             base.OnPropertyChanged();
+        }
+        public void Save()
+        {
+            using(TransactionScope scope  = new TransactionScope())
+            {
+                //ヘッダー
+                //明細
+                //在庫
+                //履歴
+                //顧客情報
+                scope.Complete();
+            }
         }
     }
 }
