@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace NDDD.WinForm.ViewModels
 {
@@ -13,6 +9,13 @@ namespace NDDD.WinForm.ViewModels
     /// </summary>
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
+        private readonly Dispatcher _dispatcher;
+
+        protected ViewModelBase(Dispatcher dispatcher)
+        {
+            _dispatcher = dispatcher;
+        }
+
         /// <summary>
         /// PropertyChanged
         /// </summary>
@@ -40,7 +43,10 @@ namespace NDDD.WinForm.ViewModels
             var h = this.PropertyChanged;
             if (h != null)
             {
-                h(this, new PropertyChangedEventArgs(propertyName));
+                _dispatcher.Invoke(delegate ()
+                {
+                    h(this, new PropertyChangedEventArgs(propertyName));
+                });
             }
             return true;
         }

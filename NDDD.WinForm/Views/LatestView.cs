@@ -1,5 +1,6 @@
 ﻿using NDDD.Domain.Exceptions;
 using NDDD.WinForm.ViewModels;
+using System.Windows.Threading;
 
 namespace NDDD.WinForm.Views
 {
@@ -11,7 +12,7 @@ namespace NDDD.WinForm.Views
         /// <summary>
         /// ViewModel
         /// </summary>
-        private LatestViewModel _viewModel = new LatestViewModel();
+        private LatestViewModel _viewModel = new LatestViewModel(Dispatcher.CurrentDispatcher);
 
         /// <summary>
         /// コンストラクタ
@@ -19,6 +20,8 @@ namespace NDDD.WinForm.Views
         public LatestView()
         {
             InitializeComponent();
+
+            //_viewModel.Dispatcher = Dispatcher.CurrentDispatcher;
 
             AreaIdTextBox.DataBindings.Add(
                 "Text",

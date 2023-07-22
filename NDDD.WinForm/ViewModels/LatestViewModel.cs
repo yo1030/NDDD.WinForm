@@ -4,6 +4,7 @@ using NDDD.Domain.StaticValues;
 using NDDD.Domain.ValueObjects;
 using NDDD.Infrastructure;
 using System.Transactions;
+using System.Windows.Threading;
 
 namespace NDDD.WinForm.ViewModels
 {
@@ -36,7 +37,7 @@ namespace NDDD.WinForm.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public LatestViewModel():this(Factories.CreateMeasure()) {
+        public LatestViewModel(Dispatcher dispatcher) : this(dispatcher,Factories.CreateMeasure()) {
 
         }
 
@@ -44,7 +45,7 @@ namespace NDDD.WinForm.ViewModels
         /// コンストラクタ
         /// </summary>
         /// <param name="measureRepository">計測リポジトリ</param>
-        public LatestViewModel(IMeasureRepository measureRepository)
+        public LatestViewModel(Dispatcher dispatcher, IMeasureRepository measureRepository) : base(dispatcher)
         {
             _measureRepository = new MeasureRepository(measureRepository);
         }
