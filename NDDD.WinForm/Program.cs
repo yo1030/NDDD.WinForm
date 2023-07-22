@@ -1,4 +1,5 @@
-﻿using NDDD.WinForm.BackgroundWorkers;
+﻿using NDDD.Infrastructure;
+using NDDD.WinForm.BackgroundWorkers;
 using NDDD.WinForm.Views;
 
 namespace NDDD.WinForm
@@ -30,6 +31,7 @@ namespace NDDD.WinForm
             _logger.Error("Errorのログ");
             _logger.Fatal("fatalのログ");
 
+            LatestTimer.SetInterface(Factories.CreateMeasure());
             LatestTimer.Start();
             Application.Run(new LoginView());
         }
