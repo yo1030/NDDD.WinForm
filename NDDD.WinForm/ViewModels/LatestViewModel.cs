@@ -16,7 +16,7 @@ namespace NDDD.WinForm.ViewModels
         /// <summary>
         /// 計測リポジトリ
         /// </summary>
-        private MeasureRepository _measureRepository;
+        //private MeasureRepository _measureRepository;
         //private MeasureEntity _measure;
 
         /// <summary>
@@ -37,17 +37,20 @@ namespace NDDD.WinForm.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public LatestViewModel(Dispatcher dispatcher) : this(dispatcher,Factories.CreateMeasure()) {
+        //public LatestViewModel(Dispatcher dispatcher) : this(dispatcher,Factories.CreateMeasure()) {
 
-        }
+        //}
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="measureRepository">計測リポジトリ</param>
-        public LatestViewModel(Dispatcher dispatcher, IMeasureRepository measureRepository) : base(dispatcher)
+        //public LatestViewModel(Dispatcher dispatcher, IMeasureRepository measureRepository) : base(dispatcher)
+        //{
+        //    _measureRepository = new MeasureRepository(measureRepository);
+        //}
+        public LatestViewModel(Dispatcher dispatcher) : base(dispatcher)
         {
-            _measureRepository = new MeasureRepository(measureRepository);
         }
 
         /// <summary>
@@ -80,11 +83,14 @@ namespace NDDD.WinForm.ViewModels
         public void Search()
         {
             //var measure = _measureRepository.GetLatest();
-            var measure = Measures.GetLatest(new AreaId(20));
+            var measure = Measures.GetLatest(
+                new AreaId(
+                    Convert.ToInt32(AreaIdText)
+            ));
             AreaIdText = measure.AreaId.DisplaValue;
             MeasureDateText = measure.MeasureDate.DisplaValue;
             MeasureValueText = measure.MeasureValue.DisplaValue;
-            base.OnPropertyChanged();
+            //base.OnPropertyChanged();
         }
         /// <summary>
         /// 保存

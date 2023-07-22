@@ -1,6 +1,7 @@
 ﻿using NDDD.Domain.Entities;
 using NDDD.Domain.Repositories;
 using NDDD.Domain.ValueObjects;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,6 +16,22 @@ namespace NDDD.Domain.StaticValues
         /// エリアごとの直近値のリスト
         /// </summary>
         private static List<MeasureEntity> _entities = new List<MeasureEntity>();
+
+        public static int Count
+        {
+            get
+            {
+                return _entities.Count;
+            }
+        }
+
+        public static void Clear()
+        {
+            lock (((ICollection)_entities).SyncRoot)
+            {
+                _entities.Clear();
+            }
+        }
 
         /// <summary>
         /// リストの作成

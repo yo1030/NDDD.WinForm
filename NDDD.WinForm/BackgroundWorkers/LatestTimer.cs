@@ -1,4 +1,5 @@
-﻿using NDDD.Domain.StaticValues;
+﻿using NDDD.Domain.Repositories;
+using NDDD.Domain.StaticValues;
 using NDDD.Infrastructure;
 
 namespace NDDD.WinForm.BackgroundWorkers
@@ -8,6 +9,7 @@ namespace NDDD.WinForm.BackgroundWorkers
     /// </summary>
     internal static class LatestTimer
     {
+        private static IMeasureRepository _repository;
         /// <summary>
         /// タイマー
         /// </summary>
@@ -23,6 +25,11 @@ namespace NDDD.WinForm.BackgroundWorkers
         static LatestTimer()
         {
             _timer = new System.Threading.Timer(Callback);
+        }
+
+        internal static void SetInterface(IMeasureRepository repository)
+        {
+            _repository = repository;
         }
 
         /// <summary>
@@ -45,7 +52,7 @@ namespace NDDD.WinForm.BackgroundWorkers
         /// コールバック
         /// </summary>
         /// <param name="o">オブジェクト</param>
-        private static void Callback(object o)
+        internal static void Callback(object o)
         {
             //_timer.Change(Timeout.Infinite, Timeout.Infinite);
 
@@ -57,7 +64,8 @@ namespace NDDD.WinForm.BackgroundWorkers
             try
             {
                 _isWork = true;
-                Measures.Create(Factories.CreateMeasure());
+                //Measures.Create(Factories.CreateMeasure());
+                Measures.Create(_repository);
             }
             finally
             {

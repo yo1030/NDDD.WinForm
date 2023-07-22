@@ -47,7 +47,8 @@ namespace NDDD.WinForm.Views
             try
             {
                 _viewModel.Search();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 ExceptionProc(ex);
             }

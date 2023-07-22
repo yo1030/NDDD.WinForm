@@ -50,7 +50,6 @@
             // 
             AreaIdTextBox.Location = new Point(96, 24);
             AreaIdTextBox.Name = "AreaIdTextBox";
-            AreaIdTextBox.ReadOnly = true;
             AreaIdTextBox.Size = new Size(150, 23);
             AreaIdTextBox.TabIndex = 1;
             // 
@@ -112,6 +111,13 @@
             Controls.Add(label1);
             Name = "LatestView";
             Text = "LatestView";
+            Controls.SetChildIndex(label1, 0);
+            Controls.SetChildIndex(AreaIdTextBox, 0);
+            Controls.SetChildIndex(label2, 0);
+            Controls.SetChildIndex(MeasureValueTextBox, 0);
+            Controls.SetChildIndex(label3, 0);
+            Controls.SetChildIndex(MeasureDateTextBox, 0);
+            Controls.SetChildIndex(SearchButton, 0);
             ResumeLayout(false);
             PerformLayout();
         }

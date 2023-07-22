@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // このような SDK スタイルのプロジェクトの場合、以前はこのファイルで定義していたいくつかのアセンブリ属性がビルド時に自動的に追加されて、プロジェクトのプロパティで定義されている値がそれに設定されるようになりました。組み込まれる属性と、このプロセスをカスタマイズする方法の詳細については、次を参照してください:
@@ -13,3 +14,4 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("d2ac4d30-0a63-4c58-9a54-27a61ccd4894")]
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: InternalsVisibleTo("NDDDTests.Test")]
